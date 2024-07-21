@@ -1,0 +1,8 @@
+language: zh-cn
+urse_data_administrator:
+  name: administrator
+  states: administrator
+user_data_user_1:
+  name: user_1
+  password: 'null'
+  states: normal_user

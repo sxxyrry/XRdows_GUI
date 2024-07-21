@@ -1,0 +1,71 @@
+ > 0.1 BETA V
+ >     Code refactoring
+ > 0.2 BETA V
+ >     Add plane war gameplay
+ > 0.3 BETA V
+ >     Remove 'G_O_S (graphical operating system)' [not completely deleted (change the source code can reappear)]
+ >     Add 'E_L (Release History)'
+ > 0.4 BETA V
+ >     Add 'mod'
+ > 0.5 BETA V
+ >     Remove 'mod'
+ > 0.6 BETA V
+ >     Add 'python_version'
+ > 0.7 BETA V
+ >     Add 'G_O_S (graphical operating system)'
+ > 0.8 BETA V
+ >     Add 'Developer mode'
+ > 0.9 BETA V
+ >     Remove 'G_O_S'
+ > 0.9 BETA __0.0.1__ V
+ >     Update password detection mechanism
+ > 0.9 BETA __0.0.2__ V
+ >     Update password detection mechanism
+ > 0.9 BETA __0.0.3__ V
+ >     Update password detection mechanism
+ > 0.9 BETA __0.0.4__ V
+ >     Add '__Self_destruction__'
+ > 0.9 BETA __0.0.5__ V
+ >     Add '_I_H_'
+ >     Remove 'Login_Data'
+ >     Remove '_C_L'
+ >     Remove 'setup'
+ >     Update deve_mode switch
+ > 0.9 BETA __0.0.6__ V
+ >     Add 'print()'
+ >     Add 'EXE Version'
+ >     Change the file structure
+ > 1.0 BETA V
+ >     Add 'P_W'
+ > 1.0 BETA __0.0.1__ V
+ >     Add 'R_py_F'
+ >     Add 'R_exe_F'
+ >     Add 'M_P_D'
+ > 1.0 BETA __0.0.2__ V
+ >     Updated the function of playing music (removed "play_music" in S_D.py files, added "play_music" and "sleep" in XRdows_main.py files)
+ >     Update the logic and name
+ >     Add music files
+ > 1.0 BETA __0.0.3__ V
+ >     Add 'Version'
+ >     Add 'Prompts'
+ > 1.0 BETA __0.0.4__ V
+ >     Add 'Force_quit'
+ >     Open-source protocol (A-Source) added
+ >     Update the 'Version' system
+ >     Add description of open-source protocol (A-Source) (html, and is use)
+ >     Remove How-to-use html
+ >     Add 'I_P'
+ >     Add 'R_I_P'
+ > 1.0 BETA __0.0.5__ V
+ >     Bug fixes
+ >     Add precursor file (XRthon) (need to go to the afdian.net website and find '是星星与然然呀' to download XRthon_front_file.7z file)
+ >     Revise some details
+ > 1.0 BETA __0.0.6__ V
+ >     Changed the name of 'front_file' to 'mods_file' (so, XRthon legacy (XRthon_front_file version) is not supported)
+ > 1.1 BETA V
+ >     Update custom mods
+ > 1.1 BETA __0.0.1__ V
+ >     Update logic
+ >     Remove EXE Version
+ > 1.1 BETA __0.0.2__ V
+ >     XRthon mods are no longer supported

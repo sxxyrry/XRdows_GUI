@@ -1,0 +1,67 @@
+/*
+body.How_to_use How-to-use titles {
+    color: rgb(0, 150, 255);
+    user-select: none;
+    text-align: center;
+}
+
+body.How_to_use How-to-use contents {
+    color: rgb(0, 150, 255);
+    user-select: none;
+    text-align: center;
+}
+*/
+
+body.introduce introduce titles {
+    color: rgb(0, 150, 255);
+    user-select: none;
+    text-align: center;
+}
+
+body.introduce introduce contents {
+    color: rgb(0, 150, 255);
+    user-select: none;
+    text-align: center;
+}
+
+diycolor {
+    user-select: none;
+    position: relative;
+    text-decoration: none;
+}
+
+diycolor *::before {
+    user-select: none;
+    content: attr(data-text);
+    position: absolute;
+    text-decoration: none;
+    color: var(--clr);
+}
+
+/*
+diycolor.az {
+    user-select: none;
+    position: relative;
+    text-decoration: none;
+}
+
+diycolor.az *::before {
+    user-select: none;
+    content: attr(data-text);
+    position: absolute;
+    text-decoration: none;
+    color: var(--clr);
+    text-align: center;
+    display: block;
+    font-size: 2em;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+*/
+
+.hide {
+    color: rgba(0, 0, 0, 0);
+}

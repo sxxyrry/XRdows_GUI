@@ -1,0 +1,7 @@
+ > exit = exit this terminal
+ > Terminal command table = print the Terminal command table
+ > ter_C_T = print the Terminal command table
+ > clear = clear the terminal
+ > startfile = start a file (startfile <filepath[Relative path (The Relative path starts from the C folder path) or Absolute path]>)
+ > Edition logs = print the Edition logs
+ > E_L = print the Edition logs

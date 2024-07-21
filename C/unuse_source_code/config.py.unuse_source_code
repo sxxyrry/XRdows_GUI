@@ -1,0 +1,59 @@
+from C.folders import folder
+import yaml
+import os
+
+# Global variables without type annotations
+config: dict[str, str | dict[str, str]] = {}
+text = ""
+
+def switch_language_(language: str):
+    if language == '简体中文':
+        language = 'zh-cn'
+    elif language == 'English':
+        language = 'en-us'
+    elif language == 'zh-cn':
+        pass
+    elif language == 'en-us':
+        pass
+    return language
+
+def config_init(language: str):
+    language = switch_language_(language)
+    with open(os.path.join(folder, './XRdows/config/config.yaml'), 'w') as f:
+        yaml.dump({'language': language,
+                   'urse_data_administrator' : {
+                        'name' : "&name administrator",
+                        'states' : "*name",
+                    },
+                    'user_data_user_1': {
+                        'name' : "user_1",
+                        'states' : "normal_user",
+                    }
+                    }, f)
+
+def get_config():
+    """Reads the configuration file and updates the global variables."""
+    global config, text
+    with open(os.path.join(folder, './XRdows/config/config.yaml'), 'r') as f:
+        text = f.read()  # text content read from file
+        config = yaml.safe_load(text)  # parse YAML into dictionary
+    if config is None:
+        config = {}
+
+def switch_language(language: str) -> None:
+    """Switch the language of the application."""
+    language = switch_language_(language)
+    with open(os.path.join(folder, './XRdows/config/config.yaml'), 'w') as f:
+        yaml.dump({'language': language,
+                   'urse_data_administrator' : {
+                        'name' : "administrator",
+                        'states' : "administrator",
+                    },
+                    'user_data_user_1': {
+                        'name' : "user_1",
+                        'states' : "normal_user",
+                    }
+                    }, f)
+
+# Ensure the configuration is loaded when this module is imported
+get_config()

@@ -1,0 +1,31 @@
+
+class Basecomments():
+    def __init__(self, *comments: object):
+        self.comments: list[object] = [i for i in comments]
+
+    def get_comments(self) -> list[object]:
+        return self.comments
+
+    def get_comments_text(self) -> str:
+        return '\n'.join([str(i) for i in self.comments])
+
+    def get_comment_with_text(self, text):
+        if text in self.comments:
+            return self.comments[self.comments.index(text)]
+        else:
+            return ''
+
+    def get_comments_text_with_text(self, text) -> str:
+        return str(self.get_comment_with_text(text))
+    
+    def get_comment_with_index(self, index) -> object:
+        if index in range(len(self.comments) - 1):
+            return ''
+        return self.comments[index]
+
+    def get_comment_text_with_index(self, index) -> str:
+        return str(self.get_comment_text_with_index(index))
+
+class comments(Basecomments):
+    def __init__(self, *comments: object):
+        super().__init__(*comments)

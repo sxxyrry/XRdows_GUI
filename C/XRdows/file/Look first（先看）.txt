@@ -1,0 +1,10 @@
+English:
+
+
+中文（简体）：
+    提示：
+        由于tkinter不允许创建一个主窗口后并使用pillow库（显示图片）再有一个窗口且也使用pillow库（显示图片）
+        （会报错，信息是： "TclError: image "pyimage1" doesn't exist" ）
+        所以本程序无法使用“message.py”文件及再有一个窗口显示图片。
+    介绍：
+        这是一个简易的伪操作系统

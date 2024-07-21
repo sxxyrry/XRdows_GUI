@@ -1,0 +1,72 @@
+import ctypes
+import os
+import sys
+import time
+import threading
+import random
+from colorama import init, Fore, Back, Style
+
+isdebug = False
+
+sleep_num_ = float(random.randint(5, 15))
+
+def get_all_sleep_num_sum():
+    return sleep_num_ + 0.5 * 6
+
+def main():
+    def debug_print(*values: object,
+                    sep: str | None = " ",
+                    end: str | None = "\n") -> None:
+        from colorama import init, Style
+
+
+        init()
+
+        if isdebug is True:
+            print(f'{Style.RESET_ALL}debug print > ', end='')
+            for value in values:
+                print(value, end=sep)
+            print(end=end)
+
+        return None
+
+    init()  # Initialize colorama for Windows support
+
+    print(f"\r{Style.RESET_ALL} > {Fore.GREEN}UEFI is Loading\b", end="")
+
+    for i in range(3):
+        if i == 2:
+            print(f"\r{Style.RESET_ALL} > {Fore.LIGHTCYAN_EX}UEFI is Loading...")
+            time.sleep(0.5)
+        else:
+            print(f"\r{Style.RESET_ALL} > {Fore.LIGHTCYAN_EX}UEFI is Loading{"." * (i + 1)}\b", end="")
+            time.sleep(0.5)
+
+    print(f"{Style.RESET_ALL} > {Fore.GREEN}UEFI is start")
+
+    time.sleep(0.5)
+
+    ctypes.windll.kernel32.SetConsoleTitleW(f"UEFI - The operating system initiates the self-test procedure")
+
+    print(f"{Style.RESET_ALL} > {Fore.LIGHTCYAN_EX}UEFI - The operating system initiates the self-test procedure")
+
+    time.sleep(0.5)
+
+    print(f"{Style.RESET_ALL} > {Fore.YELLOW}Please wait a while")
+
+    debug_print(sleep_num_)
+
+    time.sleep(sleep_num_)
+
+    print(f"{Style.RESET_ALL} > {Fore.GREEN}The operating system initiates the self-test was finished")
+
+    time.sleep(0.5)
+
+    print(f"{Style.RESET_ALL} > {Fore.LIGHTCYAN_EX}The UEFI is exiting")
+
+    time.sleep(0.5)
+
+    quit()
+
+if __name__ == "__main__":
+    main()

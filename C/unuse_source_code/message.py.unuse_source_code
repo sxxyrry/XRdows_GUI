@@ -1,0 +1,239 @@
+from PIL import Image, ImageTk
+from typing import Literal
+from C.folders import folder
+from C.ERROR_CLASS import ELSE_ERROR
+import tkinter as tk
+import pygame
+import os
+
+pygame.init()
+pygame.mixer.init()
+
+Press = []
+
+def show_info(title: str, message: str, options: Literal['NO', 'YES'] = 'NO'):
+    global messages
+
+    messages = tk.Tk('info_message')
+    messages.title(title)
+    messages.geometry('300x100')
+
+    images_ = Image.open(os.path.join(folder, './XRdows/image/info.png'))
+    _images = images_.resize((32, 32), Image.LANCZOS)
+    _image = ImageTk.PhotoImage(_images)
+
+    image = tk.Label(messages, image=_image)
+    image.image = _image  # type: ignore
+    image.pack(side=tk.LEFT)
+
+    text = tk.Label(messages, text=message)
+    text.pack(side=tk.LEFT)
+
+    if options == 'YES':
+        ok_btn = tk.Button(messages, text='OK', command=messages.destroy)  # type: ignore
+        ok_btn.pack(side=tk.RIGHT)
+
+    elif options == 'NO':
+        ok_btn = tk.Button(messages, text='OK', command=messages.destroy)
+        ok_btn.pack(side=tk.RIGHT)
+
+    else:
+        raise ELSE_ERROR('options must be "YES" or "NO"')
+
+    music_file = os.path.join(folder, './XRdows/music/XRdows Default.wav')
+
+    music_files = pygame.mixer.Sound(music_file)
+
+    messages.after(1, music_files.play)
+
+    messages.mainloop()
+
+    # 清理refs和音乐文件
+    messages.destroy()
+    del _image
+    del music_files
+
+
+def show_warning(title: str, message: str, options: Literal['NO', 'YES'] = 'NO'):
+    global messages
+
+    messages = tk.Tk('warning_message')
+    messages.title(title)
+    messages.geometry('300x100')
+
+    images_ = Image.open(os.path.join(folder, './XRdows/image/warning.png'))
+    _images = images_.resize((34, 34), Image.LANCZOS)
+    _image = ImageTk.PhotoImage(_images)
+
+    image = tk.Label(messages, image=_image)
+    image.image = _image  # type: ignore
+    image.pack(side=tk.LEFT)
+
+    text = tk.Label(messages, text=message)
+    text.pack(side=tk.LEFT)
+
+    if options == 'YES':
+        ok_btn = tk.Button(messages, text='OK', command=messages.destroy)  # type: ignore
+        ok_btn.pack(side=tk.RIGHT)
+
+    elif options == 'NO':
+        ok_btn = tk.Button(messages, text='OK', command=messages.destroy)
+        ok_btn.pack(side=tk.RIGHT)
+
+    else:
+        raise ELSE_ERROR('options must be "YES" or "NO"')
+
+    music_file = os.path.join(folder, './XRdows/music/XRdows Exclamation.wav')
+
+    music_files = pygame.mixer.Sound(music_file)
+
+    messages.after(1, music_files.play)
+
+    messages.mainloop()
+
+    # 清理refs和音乐文件
+    messages.destroy()
+    del _image
+    del music_files
+
+
+def show_error(title: str, message: str, options: Literal['NO', 'YES'] = 'NO'):
+    global messages
+
+    messages = tk.Tk('error_message')
+    messages.title(title)
+    messages.geometry('300x100')
+
+    images_ = Image.open(os.path.join(folder, './XRdows/image/error.png'))
+    _images = images_.resize((32, 32), Image.LANCZOS)
+    _image = ImageTk.PhotoImage(_images)
+
+    image = tk.Label(messages, image=_image)
+    image.image = _image  # type: ignore
+    image.pack(side=tk.LEFT)
+
+    text = tk.Label(messages, text=message)
+    text.pack(side=tk.LEFT)
+
+    if options == 'YES':
+        ok_btn = tk.Button(messages, text='OK', command=messages.destroy)  # type: ignore
+        ok_btn.pack(side=tk.RIGHT)
+
+    elif options == 'NO':
+        ok_btn = tk.Button(messages, text='OK', command=messages.destroy)
+        ok_btn.pack(side=tk.RIGHT)
+
+    else:
+        raise ELSE_ERROR('options must be "YES" or "NO"')
+
+    music_file = os.path.join(folder, './XRdows/music/XRdows Error.wav')
+
+    music_files = pygame.mixer.Sound(music_file)
+
+    messages.after(1, music_files.play)
+
+    messages.mainloop()
+
+    # 清理refs和音乐文件
+    messages.destroy()
+    del _image
+    del music_files
+
+
+def askquestion(title: str, message: str, options: Literal['NO', 'YES'] = 'NO'):
+    global messages
+
+    messages = tk.Tk('question_message')
+    messages.title(title)
+    messages.geometry('300x100')
+
+    def on_button_click(btn_text: str):
+        global messages, Press
+        messages.destroy()  # type: ignore
+        Press.append(btn_text)
+
+    print(os.path.join(folder, './XRdows/image/question.png'))
+
+    breakpoint()
+
+    images_ = Image.open(os.path.join(folder, './XRdows/image/question.png'))
+    _images = images_.resize((32, 32), Image.LANCZOS)
+    _image = ImageTk.PhotoImage(_images)
+    import objprint
+    objprint.objprint(_image)
+
+    image = tk.Label(messages, image=_image)
+    image.image = _image  # type: ignore
+    image.pack(side=tk.LEFT)
+
+    text = tk.Label(messages, text=message)
+    text.pack(side=tk.LEFT)
+
+    if options == 'YES':
+        buttons = {
+            'NO': tk.Button(messages, text='NO', command=lambda btn_text='NO': on_button_click(btn_text)),
+            'YES': tk.Button(messages, text='YES', command=lambda btn_text='YES': on_button_click(btn_text)),
+            'OK': tk.Button(messages, text='OK', command=lambda btn_text='OK': on_button_click(btn_text)),
+            'CANCEL': tk.Button(messages, text='CANCEL', command=lambda btn_text='CANCEL': on_button_click(btn_text))
+        }
+
+        for btn_text, btn in buttons.items():
+            btn.pack(side=tk.RIGHT)
+
+    elif options == 'NO':
+        no_btn = tk.Button(messages, text='NO', command=messages.destroy)
+        no_btn.pack(side=tk.RIGHT)
+
+        yes_btn = tk.Button(messages, text='YES', command=messages.destroy)
+        yes_btn.pack(side=tk.RIGHT)
+
+        ok_btn = tk.Button(messages, text='OK', command=messages.destroy)
+        ok_btn.pack(side=tk.RIGHT)
+
+        cancel_btn = tk.Button(messages, text='CANCEL', command=messages.destroy)
+        cancel_btn.pack(side=tk.RIGHT)
+
+    else:
+        raise ELSE_ERROR('options must be "YES" or "NO"')
+
+    music_file = os.path.join(folder, './XRdows/music/XRdows Default.wav')
+
+    music_files = pygame.mixer.Sound(music_file)
+
+    messages.after(1, music_files.play)
+
+    messages.mainloop()
+
+    if options == 'YES':
+        del _image
+        del music_files
+        return buttons
+    else:
+        del _image
+        del music_files
+        return
+
+
+def askyesno(title: str, message: str):
+    global Press
+
+    response_handler = askquestion(title, message, 'YES')
+    for btn_text, btn in response_handler.items():  # type: ignore
+        if Press == []:
+            return False
+
+        if btn_text == Press[0]:
+            if btn_text == 'YES':
+                return True
+            elif btn_text == 'NO':
+                return False
+            elif btn_text == 'OK':
+                return True
+            elif btn_text == 'CANCEL':
+                return False
+            else:
+                return False
+        else:
+            continue
+
+    Press = []

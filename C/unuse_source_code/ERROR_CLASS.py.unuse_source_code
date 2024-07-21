@@ -1,0 +1,23 @@
+class Not_Implemented(BaseException):
+    def __init__(self, *args : object):
+        super().__init__("Not Implemented : " + str(*args))
+
+class NO_ERROR(BaseException):
+    def __init__(self, *args : object):
+        super().__init__("NO ERROR : " + str(*args))
+
+class YES_ERROR(BaseException):
+    def __init__(self, *args : object):
+        super().__init__("YES ERROR : " + str(*args))
+
+class ELSE_ERROR(BaseException):
+    def __init__(self, *args : object):
+        super().__init__("ELSE ERROR : " + str(*args))
+
+class OK_ERROR(BaseException):
+    def __init__(self, *args : object):
+        super().__init__("OK ERROR : " + str(*args))
+
+class CANCEL_ERROR(BaseException):
+    def __init__(self, *args : object):
+        super().__init__("CANCEL ERROR : " + str(*args))

@@ -1,0 +1,14 @@
+ > C_T = Command table
+ > _EXIT = Exit
+ > P_W = Plane war game
+ > _E_L = Edition logs
+ > _I_H_ = Introduce html
+ > print() = Print
+ > M_P = Music player
+ > R_py_F = Run python file
+ > R_exe_F = Run executable
+ > M_P_D = Music player (default)
+ > Force_quit = Force quit (not recommended)
+ > I_P = image Preview
+ > R_I_P = remove image preview windows
+ > XRthon = XRthon (mods file, So, you'll need to download it again)
